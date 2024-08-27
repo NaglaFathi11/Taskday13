@@ -1,4 +1,4 @@
-import "./searchBar.css";
+import "./SearchBar.css";
 import { useState, useContext } from "react";
 import { StoreUsersData } from "../../App";
 import { Theme } from "../../App";
