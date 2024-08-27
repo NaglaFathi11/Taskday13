@@ -1,0 +1,36 @@
+:root {
+    /* Lightmode */
+    --primary: #0079ff;
+    --primary-hover: #60abff;
+
+    --txt-high-contrast: #2b3442;
+    --txt-mid-contrast: #4b6a9b;
+    --txt-low-contrast: #697c9a;
+
+    --txt-search: #222731;
+    --txt-search-placeholder: #4b6a9b;
+
+    --bg: #f6f8ff;
+    --bg-secondary: #fefefe;
+
+    --theme-switch-btn-hover: #222731;
+
+    /* Neutral */
+    --error: #f74646;
+
+}
+
+/* .main-container {
+    background-color: white;
+    margin: 0 auto;
+} */
+
+
+
+
+
+
+/* Start Medium screen */
+/* @media (min-width: 768px) and (max-width: 992px) {} */
+
+/* End Medium screen */

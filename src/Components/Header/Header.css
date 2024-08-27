@@ -1,0 +1,54 @@
+/* Start Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-logo {
+    font-size: 1.625rem;
+    line-height: 38px;
+    font-weight: 700;
+}
+
+
+.switch-section {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+#switch-btn {
+    background: none;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    cursor: url("/assets/icons8-hand-click-32.png"), pointer;
+}
+
+
+/* Start Light Header */
+.light-header .header-logo {
+    color: var(--txt-high-contrast);
+}
+
+.light-switch-btn {
+    color: var(--txt-low-contrast);
+}
+
+/* End Light Header */
+
+
+/* Start Dark Header */
+.dark-header .header-logo,
+.dark-switch-btn {
+    color: white;
+}
+
+
+/* End Dark Header */
+/* End Header */

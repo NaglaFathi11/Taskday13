@@ -1,0 +1,106 @@
+/* start search bar */
+#search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+
+.search-input {
+    color: var(--txt-high-contrast);
+    font-size: 1.125rem;
+    margin-right: 20px;
+    margin-left: 17px;
+    flex-grow: 1;
+    border: none;
+}
+
+.search-input:focus {
+    /* border: none; */
+    outline: none;
+}
+
+.active-search-btn {
+    color: #fff;
+    background-color: var(--primary);
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 13px 24px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    cursor: url("/assets/icons8-hand-click-32.png"), pointer;
+}
+
+.active-search-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.disabled-search-btn {
+    color: #fff;
+    background-color: #7ebaff;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 13px 24px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    cursor: url("/assets/icons8-do-not-disturb-37.png"), pointer;
+}
+
+/* Start light Theme */
+.light-search-bar {
+    background-color: white;
+}
+
+/* End light Theme */
+
+/* Start Dark Theme */
+.dark-search-bar {
+    background-color: #1E2A47;
+}
+
+.dark-search-bar .search-input {
+    background-color: #1E2A47;
+    color: white;
+}
+
+.dark-search-bar .search-input:placeholder-shown {
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* End Dark Theme */
+
+/* End search bar */
+
+/* Start Small Screen */
+@media (max-width: 767px) {
+
+    .search-input {
+        width: 20%;
+    }
+
+    .search-input:placeholder-shown {
+        font-size: 15px;
+        margin-left: 8px;
+    }
+
+    .search-btn {
+        width: 26%;
+        padding: 10px;
+    }
+
+    .search-img {
+        width: 20px;
+    }
+
+
+}
+
+/* End Small Screen */
