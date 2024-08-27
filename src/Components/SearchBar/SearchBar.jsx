@@ -2,14 +2,17 @@ import "./SearchBar.css";
 import { useState, useContext } from "react";
 import { StoreUsersData } from "../../App";
 import { Theme } from "../../App";
+import { ErrorState } from "../../App";
 
 export default function SearchBar() {
   const passedValue = useContext(StoreUsersData);
   const themePassedValue = useContext(Theme);
+  const ErrorStatePassedValue = useContext(ErrorState);
 
   //   console.log(passedValue);
   // Start gitHubUseName value function
 
+  //Input Value
   const [userName, setUserName] = useState("");
 
   function handleOnChange(event) {
@@ -17,9 +20,6 @@ export default function SearchBar() {
     // console.log(event.target.value);
   }
 
-  // if (userName === "=") {
-  //   console.log("error");
-  // }
   // End gitHubUseName value function
 
   // Start get data from Api and send it in db.json file functions
@@ -27,12 +27,20 @@ export default function SearchBar() {
     // console.log(userName);
     try {
       const response = await fetch(`https://api.github.com/users/${userName}`);
-      const userNameData = await response.json();
 
-      // setAllUsersInfo((prevUsersInfo) => [...prevUsersInfo, userNameData]);
-      passedValue.UsersInfoUpdate([userNameData]);
+      // In cast the user account not found
+      // const reservedWords = ["admin", "support", "about", "contact", "help"];
+      if (response.status === 404) {
+        ErrorStatePassedValue.updateErrorMessage(true);
+      } else {
+        const userNameData = await response.json();
 
-      setUserName("");
+        // setAllUsersInfo((prevUsersInfo) => [...prevUsersInfo, userNameData]);
+        passedValue.UsersInfoUpdate([userNameData]);
+        ErrorStatePassedValue.updateErrorMessage(false);
+        setUserName("");
+      }
+
       // const sendResponse = await fetch("http://localhost:3001/useNames", {
       //   method: "POST",
       //   headers: {
@@ -65,7 +73,18 @@ export default function SearchBar() {
           className="search-input"
           onChange={handleOnChange}
           value={userName}
-        ></input>
+        >
+          {}
+        </input>
+        {ErrorStatePassedValue.errorMessage ? (
+          <span
+            className={
+              ErrorStatePassedValue.errorMessage ? "notFound-userName" : ""
+            }
+          >
+            Not Found
+          </span>
+        ) : null}
         <button
           type="submit"
           onClick={handleSearchBtn}

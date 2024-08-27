@@ -53,6 +53,12 @@
     cursor: url("/assets/icons8-do-not-disturb-37.png"), pointer;
 }
 
+.notFound-userName {
+    color: #f74646;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
 /* Start light Theme */
 .light-search-bar {
     background-color: white;
@@ -100,7 +106,9 @@
         width: 20px;
     }
 
-
+    .notFound-userName {
+        margin-right: 7px;
+    }
 }
 
 /* End Small Screen */
